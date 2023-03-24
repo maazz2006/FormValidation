@@ -13,7 +13,7 @@ form.onsubmit = function validation(){
   
     if(email.value === ""){
         emailError.classList.add('error')
-        emailError.innerHTML = '*Email Address field is empty';
+        emailError.innerHTML = '* Email Address field is empty';
         
        
         return false;    
@@ -21,51 +21,46 @@ form.onsubmit = function validation(){
     else if( !email.value.match( /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/) ){
      
         emailError.classList.add('error')
-        emailError.innerHTML = '*Invalid Email Address';
+        emailError.innerHTML = '* Invalid Email Address';
         return false;
     }
 
     if(phone.value == ""){
         phoneErr.classList.add('error')
-        phoneErr.innerHTML = '*Phone field is empty'
+        phoneErr.innerHTML = '* Phone field is empty'
         return false;
     }
     else if(phone.value.length !== 11){
         phoneErr.classList.add('error')
-        phoneErr.innerHTML = '*Invalid phone number length'
+        phoneErr.innerHTML = '* Invalid phone number length'
+        
         return false;
     }
 
 
     if(password.value == ""){
         passErr.classList.add('error')
-        passErr.innerHTML = '*Password field is empty'
+        passErr.innerHTML = '* Password field is empty'
         return false;
     }
     else if(password.value.length < 8){
         passErr.classList.add('error')
-        passErr.innerHTML = '*Password length should be more than 8'
+        passErr.innerHTML = '* Password length should be more than 8'
         return false;
     }
     else if(!password.value.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/)){
         passErr.classList.add('error')
-        passErr.innerHTML = '*Password should contain Uppercase and digits'
+        passErr.innerHTML = '* password must contain Uppercase and digits'
         
         return false;
     } 
  
     if(confirmPassword.value !== password.value){
         confirmPassError.classList.add('error');
-        confirmPassError.innerHTML = "*Passwords doesn't match"
+        confirmPassError.innerHTML = "* passwords doesn't match"
         
         return false;
     }
-    const userInfo = [];
-    userInfo.push(email.value);
-    userInfo.push(phone.value);
-    userInfo.push(password.value);
-    userInfo.push(confirmPassword.value);
-    localStorage.setItem("user", JSON.stringify(userInfo));
     
     
 }
