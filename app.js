@@ -33,7 +33,6 @@ form.onsubmit = function validation(){
     else if(phone.value.length !== 11){
         phoneErr.classList.add('error')
         phoneErr.innerHTML = '*Invalid phone number length'
-        
         return false;
     }
 
