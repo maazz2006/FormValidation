@@ -61,6 +61,13 @@ form.onsubmit = function validation(){
         
         return false;
     }
+    const userInfo = [];
+    userInfo.push(email.value);
+    userInfo.push(phone.value);
+    userInfo.push(password.value);
+    userInfo.push(confirmPassword.value);
+
+    localStorage.setItem('user',JSON.stringify(userInfo));
     
     
 }
